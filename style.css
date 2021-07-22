@@ -1,0 +1,93 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #091921;
+}
+
+body {
+    max-width: 600px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    animation: zoom 0.3s linear;
+}
+
+img:hover {
+    transform: scale(0.9);
+}
+
+.modalContent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalImg {
+    height: 500px;
+    width: 500px;
+    pointer-events: none;
+}
+
+.active {
+    display: flex !important;
+}
+
+.prevBtn, .nextBtn {
+    position: fixed;
+    cursor: pointer;
+    padding: 15px 25px;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.nextBtn {
+    right: 0;
+}
+
+.prevBtn {
+    left: 0;
+}
+
+.prevBtn:hover, .nextBtn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.nav {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
